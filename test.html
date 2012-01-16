@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        
+        <script src="jquery-current.min.js"></script>
+        <script src="jquery.autocomplete.js" charset="utf8"></script>
+        
+        <link rel="stylesheet" href="autocomplete.css"/>
+            
+        
+        <script>
+            $(document).ready(function(){
+                $('#input1').autocomplete({
+                    dictonary:['дом','улица','квартира','город'],
+                    url: 'address.html',
+                    reqParam: 'word'
+                });
+                $('#input2').autocomplete({
+                    dictonary:['дом','улица','квартира','город'],
+                    url: 'address.html',
+                    reqParam: 'word',
+                    multipleEnter: true
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form action="?ok=1">
+            <div>
+                test single field <input type="text" name="a" id="input1" style="width: 300px"/>
+            </div>
+            <div style="margin-top: 100px">
+                test multiple field <input type="text" name="b" id="input2" style="width: 300px"/>
+            </div>
+            <input type="submit"/>
+        </form>
+    </body>
+</html>
